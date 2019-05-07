@@ -51,3 +51,15 @@ export default () => (
     "build": "umi build"
   },
 ```
+
+## 执行dev命令
+``` node 
+npm run dev
+```
+
+## 上传项目
+``` node 
+git add .
+git commit -m 'antd-course init'
+git push origin master
+```
