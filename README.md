@@ -63,3 +63,24 @@ git add .
 git commit -m 'antd-course init'
 git push origin master
 ```
+
+## 添加`umi-plugin-react`插件
+`npm install umi-plugin-react --save-dev`,然后在配置文件`config/config.js` 并引入antd
+``` javascript
+export default {
+    // ...
+    plugins: [
+        ['umi-plugin-react',{
+            antd: true
+        }],
+    ],
+}
+```
+
+脚手架中自带了 antd 否则需要安装
+``` node 
+npm install --save antd
+```
+## 受控组件与非受控组件
+"受控"组件指组件的值可以被外部修改的组件
+"非受控"组件指组件的值由自己维护，即未向外暴露value属性,组件的状态由组件自己维护的组件
