@@ -63,3 +63,15 @@ git add .
 git commit -m 'antd-course init'
 git push origin master
 ```
+
+## 使用分支
+``` node 
+//创建分支
+git checkout -b feature_new
+//切换回主分支
+git checkout master
+//删掉新的分支
+git branch -d feature_new
+//将分支推送到远端仓库
+git push origin <branch>
+```
