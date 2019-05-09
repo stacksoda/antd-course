@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import { Card, Button  } from 'antd';
+import { Card, /* Button */  } from 'antd';
 import { connect } from 'dva';
 
 const namespace = 'puzzlecards';
 
 const mapStateToProps = state => {
-    const cardList = state[namespace];
+    const cardList = state[namespace].data;
     return {
         cardList,
     }
@@ -13,17 +13,25 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        onClickAdd: newCard => {
-            const action = {
-                type: `${namespace}/addNewCard`,
-                payload: newCard // 这里定义的payload字段
-            };
-            dispatch(action);
-        }
-    }
-}
+      onDidMount: () => {
+        dispatch({
+          type: `${namespace}/queryInitCards`,
+        });
+      },
+        // onClickAdd: newCard => {
+        //     const action = {
+        //         type: `${namespace}/addNewCard`,
+        //         payload: newCard // 这里定义的payload字段
+        //     };
+        //     dispatch(action);
+        // }
+    };
+};
 @connect(mapStateToProps, mapDispatchToProps)
 export default class PuzzleCardsPage extends Component {
+  componentDidMount() {
+    this.props.onDidMount();
+  }
 //   constructor(props) {
 //     super(props);
 //     this.state = {
@@ -58,11 +66,11 @@ export default class PuzzleCardsPage extends Component {
 //   }
 
   render() {
-      console.log('soda log props: ', this.props);
+      // console.log('soda log props: ', this.props);
     return (
       <div>
         {
-          this.props.cardList.data.map(card => {
+          this.props.cardList.map(card => {
               console.log('card', card);
             return (
               <Card key={card.id}>
@@ -77,12 +85,12 @@ export default class PuzzleCardsPage extends Component {
         {/* <div>
           <Button onClick={this.addNewCard}> 添加卡片 </Button>
         </div> */}
-        <div>
+        {/* <div>
           <Button onClick={() => this.props.onClickAdd({
             setup: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
             punchline: 'here we use dva',
           })}> 添加卡片 </Button>
-        </div>
+        </div> */}
       </div>
     );
   }
