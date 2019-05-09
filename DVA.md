@@ -27,3 +27,22 @@ mapStateToProps 这个函数的入参 state 其实是 dva 中所有 state 的总
 
 
 注意 render 函数中通过 this.props.cardList 取到了数据，数据已经不再由组件自己管理，我们得到了第一步中的页面样子：
+
+
+我们对 export 进行调整，将 dva 中的数据传入。\
+
+
+
+function mapStateToProps(state) {
+  return {
+    cardsList: state.cards.cardsList,
+    cardsLoading: state.loading.effects['cards/queryList'],
+  };
+}
+
+export default connect(mapStateToProps)(List);
+
+
+其中当用户 dispatch 对应 effect 时，dva 会自动注入对应 effect 的 loading 状态。
+因而我们可以很方便的将 state.loading.effects 中的状态传入。
+（对应 card modal 代码请参阅 src/modal/cards.js 文件。）

@@ -14,4 +14,5 @@ app.use(createLoading());
   app.use(plugin);
 });
 
-app.model({ namespace: 'puzzlecards', ...(require('C:/Users/soda/Desktop/antd-course/src/model/puzzlecards.js').default) });
+app.model({ namespace: 'list', ...(require('/Users/leanbi/Desktop/antd-course/src/model/list.js').default) });
+app.model({ namespace: 'puzzlecards', ...(require('/Users/leanbi/Desktop/antd-course/src/model/puzzlecards.js').default) });

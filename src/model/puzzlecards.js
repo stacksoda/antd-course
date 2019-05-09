@@ -38,6 +38,11 @@ export default {
 
                 const puzzle2 = yield call(request, endPointURI);
                 yield put({ type: 'addNewCard', payload: puzzle2 });
+
+                yield call(delay, 3000);
+
+                const puzzle3 = yield call(request, endPointURI);
+                yield put({ type: 'addNewCard', payload: puzzle3 });
             } catch(e) {
                 message.error('数据获取失败');
             }

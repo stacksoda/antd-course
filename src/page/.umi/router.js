@@ -40,17 +40,22 @@ let routes = [
             "exact": true
           },
           {
-            "component": () => React.createElement(require('C:/Users/soda/Desktop/antd-course/node_modules/umi-build-dev/lib/plugins/404/NotFound.js').default, { pagesPath: 'src/page', hasRoutesInConfig: true })
+            "component": () => React.createElement(require('/Users/leanbi/Desktop/antd-course/node_modules/umi-build-dev/lib/plugins/404/NotFound.js').default, { pagesPath: 'src/page', hasRoutesInConfig: true })
           }
         ]
       },
       {
-        "component": () => React.createElement(require('C:/Users/soda/Desktop/antd-course/node_modules/umi-build-dev/lib/plugins/404/NotFound.js').default, { pagesPath: 'src/page', hasRoutesInConfig: true })
+        "path": "/list",
+        "component": require('../list').default,
+        "exact": true
+      },
+      {
+        "component": () => React.createElement(require('/Users/leanbi/Desktop/antd-course/node_modules/umi-build-dev/lib/plugins/404/NotFound.js').default, { pagesPath: 'src/page', hasRoutesInConfig: true })
       }
     ]
   },
   {
-    "component": () => React.createElement(require('C:/Users/soda/Desktop/antd-course/node_modules/umi-build-dev/lib/plugins/404/NotFound.js').default, { pagesPath: 'src/page', hasRoutesInConfig: true })
+    "component": () => React.createElement(require('/Users/leanbi/Desktop/antd-course/node_modules/umi-build-dev/lib/plugins/404/NotFound.js').default, { pagesPath: 'src/page', hasRoutesInConfig: true })
   }
 ];
 window.g_routes = routes;

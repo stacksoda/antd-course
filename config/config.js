@@ -25,11 +25,18 @@ export default {
                         component: 'Dashboard/Workplace'
                     }
                 ]
+            },
+            {
+                path: '/list',
+                component: './list'
             }
+
         ]
-    },],
+    },
+
+    ],
     plugins: [
-        ['umi-plugin-react',{
+        ['umi-plugin-react', {
             antd: true,
             dva: true
         }],
