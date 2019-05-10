@@ -31,6 +31,11 @@ export default {
               const { call, put } = sagaEffects;
               yield call(delay, 3000);
               yield put({ type: 'initList', payload: listData });
+        },
+        *addOne({ payload }, {call, put}) {
+            console.log('soda log addone state');
+            yield call(delay, 2000);
+            yield put({ type: 'addOneSome', payload})
         }
     },
     reducers: {
@@ -39,6 +44,18 @@ export default {
             return {
                 cardsList
             };
+        },
+        addOneSome(state, {payload}) {
+            console.log('add some ')
+            console.log('old state ', state);
+            console.log('new payload ', payload);
+            const cardsList = [].concat(state.cardsList,payload);
+            console.log('cardList', cardsList);
+            return {
+                cardsList
+            };
+               
+            
         }
     }
 };
