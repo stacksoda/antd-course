@@ -34,6 +34,7 @@ export default {
         }, 3000);
     },
     'get /api/cards/:id/statistic': function( req, res, next ) {
+        console.log('user request the data of id = ', req.params.id)
         res.json(chartData);
     }
 };
