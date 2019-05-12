@@ -25,5 +25,8 @@
   "devDependencies": {
     "umi": "^2.6.17",
     "umi-plugin-react": "^1.7.6"
+  },
+  "dependencies": {
+    "@antv/g2": "^3.5.3"
   }
 }

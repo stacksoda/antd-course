@@ -12,6 +12,15 @@ const random_jokes = [
         punchline: 'A satisfactory',
     },
 ];
+const chartData = {
+    result: [
+        { genre: 'Sports', sold: 275 },
+        { genre: 'Strategy', sold: 1150 },
+        { genre: 'Action', sold: 120 },
+        { genre: 'Shooter', sold: 350 },
+        { genre: 'Other', sold: 150 },
+    ]
+}
 
 let random_joke_call_count = 0;
 
@@ -24,4 +33,7 @@ export default {
             res.json(responseObj);
         }, 3000);
     },
+    'get /api/cards/:id/statistic': function( req, res, next ) {
+        res.json(chartData);
+    }
 };
